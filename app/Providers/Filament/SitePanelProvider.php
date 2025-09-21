@@ -28,9 +28,7 @@ class SitePanelProvider extends PanelProvider
             ->id('site')
             ->path('/')
             ->login()
-            ->registration()
             ->emailVerification()
-            ->passwordReset()
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -41,6 +39,7 @@ class SitePanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
+                AccountWidget::class,
                 FilamentInfoWidget::class,
             ])
             ->middleware([
